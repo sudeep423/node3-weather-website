@@ -22,7 +22,7 @@ const forecast = (latitude,longitude,callback)=> {
         } else if(body.error){
             callback('wrong coordinates',undefined)
         } else {
-            callback(undefined,body.daily.data[0].summary+' It is currently ' + body.currently.temperature + ' degrees out. There is a '+body.currently.precipProbability + '% chance of rain')
+            callback(undefined,body.daily.data[0].summary+' It is currently ' + body.currently.temperature + ' degrees out. Humidity is '+ body.currently.humidity + ' with visibility of '+  body.currently.visibility +'. There is a '+body.currently.precipProbability + '% chance of rain')
         }
     })
 }
